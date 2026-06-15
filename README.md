@@ -3,7 +3,7 @@
 This program is a part of the [nwg-shell](https://nwg-piotr.github.io/nwg-shell) project.
 
 Nwg-hello is a GTK3-based greeter for the [greetd](https://git.sr.ht/~kennylevinsen/greetd) daemon, written in python.
-It is meant to work under a Wayland compositor, like [sway](https://swaywm.org) or [Hyprland](https://hyprland.org) (also see: 
+It is meant to work under a Wayland compositor, like [niri](https://niri-wm.github.io/niri/), [sway](https://swaywm.org) or [Hyprland](https://hyprland.org) (also see: 
 [Running on Debian and labwc](#running-on-debian-and-labwc)).
 The greeter has been developed for the [nwg-iso](https://github.com/nwg-piotr/nwg-iso) project, but it may be configured for standalone use.
 
@@ -36,7 +36,7 @@ was no such thing, I had to develop one.
 - greetd;
 - gtk3;
 - gtk-layer-shell;
-- Hyprland or sway Wayland compositor;
+- Hyprland, Niri, or sway Wayland compositor;
 - gnome-themes-extra.
 
 ## Make dependencies
@@ -92,14 +92,20 @@ with
 command = "/usr/bin/start-hyprland -- -c /etc/nwg-hello/hyprland.conf"
 ```
 
-if you want to use Hyprland, or this line if you prefer sway:
+if you want to use Hyprland, or this line if you prefer niri:
+
+```toml
+command = "niri -c /etc/nwg-hello/niri.kdl"
+```
+
+or this line if you prefer sway:
 
 ```toml
 command = "sway -c /etc/nwg-hello/sway-config"
 ```
 
 NOTE: you may need `sway --unsupported-gpu` for Nvidia. Also, if you'd like to make some additional configuration
-(e.g., monitor layout), edit `/etc/nwg-hello/hyprland.conf` or `/etc/nwg-hello/sway-config`, respectively.
+(e.g., monitor layout), edit `/etc/nwg-hello/hyprland.conf`, `/etc/nwg-hello/niri.kdl`, or `/etc/nwg-hello/sway-config`, respectively.
 
 __Do not change the__ `user = "greeter"` __line__, or some file-related functions won't work.  
 

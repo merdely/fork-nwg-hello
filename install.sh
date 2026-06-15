@@ -33,6 +33,7 @@ python -m installer dist/*.whl
 install -D -m 644 -t /etc/nwg-hello/ nwg-hello-default.json
 install -D -m 644 -t /etc/nwg-hello/ nwg-hello-default.css
 install -D -m 644 -t /etc/nwg-hello/ hyprland.conf
+install -D -m 644 -t /etc/nwg-hello/ niri.kdl
 install -D -m 644 -t /etc/nwg-hello/ sway-config
 install -D -m 644 -t /etc/nwg-hello/ README
 install -D -m 644 -t /usr/share/nwg-hello/ nwg.jpg
