@@ -1,0 +1,6 @@
+spawn-at-startup "sh" "-c" "nwg-hello; niri msg action quit --skip-confirmation"
+hotkey-overlay { skip-at-startup; }
+gestures { hot-corners { off; }; }
+layout { background-color "#000000"; }
+
+include optional=true "/etc/nwg-hello/niri_overrides.kdl"
